@@ -1,0 +1,21 @@
+pie {
+    border-radius: 50%;
+    background-color: green;
+}
+
+.ten {
+    background-image:
+        /* 10% = 126deg = 90 + ( 360 * .1 ) */
+        linear-gradient(126deg, transparent 50%, white 50%),
+        linear-gradient(90deg, white 50%, transparent 50%);
+}
+
+.circle-box {
+    background: lightblue;
+    width: 500px;
+    height: 500px;
+}
+
+.circle{
+    background: blue;
+}
