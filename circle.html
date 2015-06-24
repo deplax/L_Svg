@@ -1,22 +1,43 @@
 <html>
+
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="circle.css">
 </head>
 
 <body>
-    <svg class="circle-box">
-<!--        <circle class="circle" cx="250" cy="250" r="250"></circle>-->
-        
-<!--
-x = cx + r * cos(a)
-y = cy + r * sin(a)
--->
-        <path d="M 250, 250 L 250,0 A 250, 250 1 0,1 250, 500 z"></path>
-    </svg>
+    <div>
+        <svg class="circle-box">
+        </svg>
+    </div>
+
+    <div class="add-area">
+        <div>
+            <label for="item">Item</label>
+            <input id="item" type="text">
+        </div>
+        <div>
+            <label for="areaSize">areaSize</label>
+            <input id="areaSize" type="text">
+        </div>
+        <div>
+            <button id="add">add</button>
+        </div>
+    </div>
+    
+    <div class="list-area">
+    
+    </div>
+    
+    <div class="spin-area">
+        <button id="spin">spin</button>
+        <button id="stop">stop</button>
+    </div>
 </body>
 
-    
+
 <script type="text/javascript" src="circle.js"></script>
+
 </html>
 
 <!--

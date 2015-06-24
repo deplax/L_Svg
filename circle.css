@@ -6,16 +6,77 @@ pie {
 .ten {
     background-image:
         /* 10% = 126deg = 90 + ( 360 * .1 ) */
-        linear-gradient(126deg, transparent 50%, white 50%),
+        linear-gradient(126deg, transparent 50%, white 50),
         linear-gradient(90deg, white 50%, transparent 50%);
 }
 
 .circle-box {
-    background: lightblue;
     width: 500px;
     height: 500px;
 }
 
+.spin {
+    transform: rotate(1000deg);
+}
+
 .circle{
     background: blue;
+}
+
+.transition{
+    transition: 8s;
+    transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+path {
+    fill: red;
+}
+
+label{
+  display: block;
+  position: relative;
+  z-index: -9;
+  top: 1.5rem;
+  color: rgba(255,255,255,.4);
+  font-size: .875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: top .3s ease, color .3s ease;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  animation: rotating 1s linear infinite;
 }
