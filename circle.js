@@ -1,13 +1,5 @@
+// 참조할 사이트
 // http://blog.naver.com/youngchanmmm/80205139615
-
-// startDegree, endDegree -> drawPath
-// 먼저 리스트를 받아야 해.
-
-// drawPiece(startDegree, endDegree);
-// drawText(startDegree, endDegree);
-// addPiece(itemName, weight);
-
-
 
 function Piece() {
     this.radius = 250;
@@ -187,6 +179,7 @@ var itemAdd = function () {
     draw();
 }
 
+var key = false;
 var pieces = [];
 var setting = function () {
 
@@ -267,16 +260,35 @@ var setting = function () {
         var sin = b / scale;
         var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
 
-        // 회전 클래스를 제거하고 마지막 위치를 보여준다.
-        el.style.animation = "";
-        el.classList.remove("transition");
-        el.style.transform = "rotate(" + angle + "deg)";
-        angle += 360 * 8;
-        // 실행시점 문제로 setTimeout이 필요했다.
-        setTimeout(function () {
-            el.classList.add("transition");
+        //랜덤일지 조작일지
+        if (key === false) {
+            // 회전 클래스를 제거하고 마지막 위치를 보여준다.
+            el.style.animation = "";
+            el.classList.remove("transition");
             el.style.transform = "rotate(" + angle + "deg)";
-        }, 0);
+            angle += 360 * 8;
+            // 실행시점 문제로 setTimeout이 필요했다.
+            setTimeout(function () {
+                el.classList.add("transition");
+                el.style.transform = "rotate(" + angle + "deg)";
+            }, 0);
+        } else {
+            el.style.animation = "";
+            el.classList.remove("transition");
+            angle = rand(pieces[key - 1].startDegree, pieces[key - 1].endDegree) * -1;
+            el.style.transform = "rotate(" + angle + "deg)";
+            angle += 360 * 8;
+            // 실행시점 문제로 setTimeout이 필요했다.
+            setTimeout(function () {
+                el.classList.add("transition");
+                el.style.transform = "rotate(" + angle + "deg)";
+            }, 0);
+        }
+
+
+
+
+
     });
 }();
 
@@ -286,7 +298,7 @@ function rand(min, max) {
 };
 
 function startSpin(circle, sec) {
-    if(sec < 0.2)
+    if (sec < 0.2)
         return;
     circle.style.animation = "rotating " + sec + "s linear infinite";
     setTimeout(function () {
@@ -296,21 +308,37 @@ function startSpin(circle, sec) {
     }, 10);
 };
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     console.log(e.keyCode);
     switch (e.keyCode) {
-        case 37:
-            alert('left');
-            break;
-        case 38:
-            alert('up');
-            break;
-        case 39:
-            alert('right');
-            break;
-        case 40:
-            alert('down');
-            break;
+    case 49:
+        key = 1;
+        break;
+    case 50:
+        key = 2;
+        break;
+    case 51:
+        key = 3;
+        break;
+    case 52:
+        key = 4;
+        break;
+    case 53:
+        key = 5;
+        break;
+    case 54:
+        key = 6;
+        break;
+    case 55:
+        key = 7;
+        break;
+    case 56:
+        key = 8;
+        break;
+    case 57:
+        key = 9;
+        break;
+
     }
 };
 
