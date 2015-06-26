@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // http://blog.naver.com/youngchanmmm/80205139615
 
 // startDegree, endDegree -> drawPath
@@ -279,24 +278,6 @@ var setting = function () {
             el.style.transform = "rotate(" + angle + "deg)";
         }, 0);
     });
-=======
-var init = function() {
-    var circlePath = "";
-    var middleX = 250;
-    var middleY = 250;
-    var radius = 250;
-    var degree = -90 + 30;
-    var calX = 0;
-    var calY = 0;
-    
-    calX = middleX + radius * Math.cos(degree * (Math.PI / 180));
-    calY = middleY + radius * Math.sin(degree * (Math.PI / 180));
-    
-    circlePath = "M " + middleX + ", " + middleY + " L " + middleX + ", " + "0" + " A " + middleX + ", " + middleY + " 0 0, 1 " + calX + ", " + calY + " z";
-    
-    document.querySelector(".circle-box path").setAttribute("d", circlePath);
-    
->>>>>>> bc23af343875a5289b45e7c6227046157d7822fd
 }();
 
 // -------------------------------------------------------
@@ -340,16 +321,8 @@ document.onkeydown = function(e) {
 // weight를 regix를 사용하여 숫자만 거를 것.
 // add 후에 필드를 지워줄 것.
 
-<<<<<<< HEAD
 // 무한회전. *
 // 랜덤 스탑. *
 // 천천히 빨라지도록
 // 지정 스탑.
 // 스킨 씌우기.
-=======
-// http://blog.naver.com/youngchanmmm/80205139615
-
-// 행사용 조작가능한 돌림판을 만들자.
-
-// 리스트에 항목, 가중도를 넣으면 돌림판이 생성된다.
->>>>>>> bc23af343875a5289b45e7c6227046157d7822fd
