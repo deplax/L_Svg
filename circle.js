@@ -22,15 +22,27 @@ function Piece() {
 Piece.prototype.initialize = function (parent, data) {
     this.setParent(parent);
     this.setData(data);
-    this.setColor();
+    this.setColor(pieces.indexOf(data));
 }
 
 Piece.prototype.setParent = function (parent) {
     this.parent = parent;
 }
 
-Piece.prototype.setColor = function () {
-    this.pathElement.style.fill = "rgb(" + rand(0, 255) + ", " + rand(0, 255) + ", " + rand(0, 255) + ")"
+Piece.prototype.setColor = function (i) {
+
+    if(i % 5 === 0)
+        this.pathElement.style.fill = "rgb(252, 96, 66)";
+    if(i % 5 === 1)
+        this.pathElement.style.fill = "rgb(252, 185, 65)";
+    if(i % 5 === 2)
+        this.pathElement.style.fill = "rgb(238, 230, 87)";
+    if(i % 5 === 3)
+        this.pathElement.style.fill = "rgb(44, 201, 144)";
+    if(i % 5 === 4)
+        this.pathElement.style.fill = "rgb(44, 130, 201)";
+    if(i >= 5)
+        this.pathElement.style.fill = "rgb(" + rand(0, 255) + ", " + rand(0, 255) + ", " + rand(0, 255) + ")"
 }
 
 Piece.prototype.setData = function (data) {
@@ -73,6 +85,10 @@ Piece.prototype.drawText = function () {
     this.textElement.setAttribute("x", positionX);
     this.textElement.setAttribute("y", positionY);
     this.textElement.setAttribute("fill", "black");
+    this.textElement.setAttribute("stroke", "black");
+    this.textElement.setAttribute("font-size", "30px");
+    this.textElement.setAttribute("text-anchor", "middle");
+    this.textElement.setAttribute("alignment-baseline", "middle");
     this.textElement.setAttribute("transform", "rotate(" + degree + " " + positionX + ", " + positionY + ")");
     this.textElement.innerHTML = this.text;
     this.parent.appendChild(this.textElement);
@@ -89,7 +105,7 @@ var drawList = function () {
     };
 
     for (var i = 0; i < pieces.length; i++) {
-        var elementSpan = document.createElement("span");
+        var elementSpan = document.createElement("div");
         var elementButton = document.createElement("button");
         elementButton.innerHTML = "삭제";
 
@@ -183,45 +199,45 @@ var key = false;
 var pieces = [];
 var setting = function () {
 
-    //DummyData
-    var dummyItem01 = {
-        name: "사탕",
-        weight: 2,
-        startDegree: 0,
-        endDegree: 0
-    };
-    var dummyItem02 = {
-        name: "초콜렛",
-        weight: 3,
-        startDegree: 0,
-        endDegree: 0
-    };
-    var dummyItem03 = {
-        name: "햄버거",
-        weight: 1,
-        startDegree: 0,
-        endDegree: 0
-    };
-    var dummyItem04 = {
-        name: "커피",
-        weight: 2,
-        startDegree: 0,
-        endDegree: 0
-    };
-    var dummyItem05 = {
-        name: "쥬스",
-        weight: 1,
-        startDegree: 0,
-        endDegree: 0
-    };
-    pieces.push(dummyItem01);
-    pieces.push(dummyItem02);
-    pieces.push(dummyItem03);
-    pieces.push(dummyItem04);
-    pieces.push(dummyItem05);
-    itemBox = new ItemBox();
-    itemBox.calcDegree();
-    draw();
+    // //DummyData
+    // var dummyItem01 = {
+    //     name: "사탕",
+    //     weight: 2,
+    //     startDegree: 0,
+    //     endDegree: 0
+    // };
+    // var dummyItem02 = {
+    //     name: "초콜렛",
+    //     weight: 3,
+    //     startDegree: 0,
+    //     endDegree: 0
+    // };
+    // var dummyItem03 = {
+    //     name: "햄버거",
+    //     weight: 1,
+    //     startDegree: 0,
+    //     endDegree: 0
+    // };
+    // var dummyItem04 = {
+    //     name: "커피",
+    //     weight: 2,
+    //     startDegree: 0,
+    //     endDegree: 0
+    // };
+    // var dummyItem05 = {
+    //     name: "쥬스",
+    //     weight: 1,
+    //     startDegree: 0,
+    //     endDegree: 0
+    // };
+    // pieces.push(dummyItem01);
+    // pieces.push(dummyItem02);
+    // pieces.push(dummyItem03);
+    // pieces.push(dummyItem04);
+    // pieces.push(dummyItem05);
+    // itemBox = new ItemBox();
+    // itemBox.calcDegree();
+    // draw();
 
 
     // 아이템 추가

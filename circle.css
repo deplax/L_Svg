@@ -1,6 +1,14 @@
 body {
     font-family: "Open Sans", sans-serif;
     background: #222;
+    margin: 0;
+}
+
+.frame{
+    position: absolute;
+    z-index: 1000;
+    top: 30px;
+    left: 30px;
 }
 
 pie {
@@ -16,6 +24,7 @@ pie {
 
 .circle-box {
     float: left;
+    margin: 30px 30px 30px 30px;
     width: 500px;
     height: 500px;
 }
@@ -61,11 +70,23 @@ path {
 }
 
 .list-area {
+    color: white;
     position: relative;
     float: left;
 }
 
+.list-area div {
+    width: 200px;
+    margin: 0px 0px 5px 0px;
+}
+
+.list-area div div{
+    width: 100px;
+    float: left;
+}
+
 .spin-area {
+    padding: 10px;
     position: relative;
     float: left;
 }
