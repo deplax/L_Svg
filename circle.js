@@ -354,7 +354,9 @@ document.onkeydown = function (e) {
     case 57:
         key = 9;
         break;
-
+    case 27:
+        key = false;
+        break;
     }
 };
 
